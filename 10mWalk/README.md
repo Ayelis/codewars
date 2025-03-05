@@ -13,4 +13,3 @@ Note: you will always receive a valid array containing a random assortment of di
     ['w'] returns False
 
     ['n','n','n','s','n','s','n','s','n','s'] returns False
-
