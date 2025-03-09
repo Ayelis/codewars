@@ -16,3 +16,7 @@
 	'ABBCcAD' returns ['A', 'B', 'C', 'c', 'A', 'D']
 
 	[1,2,2,3,3] returns [1,2,3]
+
+## Solution Complexity:
+	Time: O(n) - Linear
+	Space: O(n) - Linear

@@ -19,3 +19,7 @@
 	0, 0, 0       --> "000000"
 
 	148, 0, 211   --> "9400D3"
+
+## Solution Complexity:
+	Time: O(1) - Constant
+	Space: O(1) - Constant

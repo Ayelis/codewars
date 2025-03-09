@@ -10,3 +10,7 @@
 
 ## Returns:
 	An integer representing the number of seconds between the times or dates
+
+## Solution Complexity:
+	Time: O(1) - Constant
+	Space: O(1) - Constant
