@@ -1,3 +1,12 @@
+/*
+  Solution for "Take a Ten Minutes Walk"
+  CodeWars Link: https://www.codewars.com/kata/54da539698b8a2ad76000228
+
+  Complexity Analysis:
+  - Time Complexity: O(n) - Linear, though the walk array length is constant
+  - Space Complexity: O(1) - Constant, a boolean regardless of the input size
+*/
+
 function isValidWalk(walk){
 	//count array length, return false if not 10 min
 	if(walk.length != 10) return false;

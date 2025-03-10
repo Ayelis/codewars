@@ -1,16 +1,21 @@
-# Instructions
-	Instructions can be found at this URL:
-	https://www.codewars.com/kata/5887a6fe0cfe64850800161c
+# Problem: Area of Largest Square in a Circle
+	Difficulty: 7 kyu
+	Date Completed: 2025-03-09
 
-## Function(s) Usage:
-	areaLargestSquare(r)
+## 📜Instructions
+	Full problem description:
+	[CodeWars Link](https://www.codewars.com/kata/5887a6fe0cfe64850800161c)
 
-## Inputs:
-	A number representing a circle's radius
+## 🛠Function(s) Usage:
+	Function: areaLargestSquare(r)
 
-## Returns:
-	The area of the square that fits within that radius
+### Inputs:
+	r (number): A circle’s radius
 
-## Solution Complexity:
+### Returns:
+	A number representing the area of the largest square that fits
+	within the circle
+
+## ⏳Solution Complexity:
 	Time: O(1) - Constant
 	Space: O(1) - Constant
