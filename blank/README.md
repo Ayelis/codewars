@@ -2,7 +2,6 @@
 	This folder just holds some "blank" files for my code and readme structure
 
 ## 🛠Why?
-	I intend to create shell scripts and/or batch files to automate the creation
-	of new codewars problems. I fully intend to share that code when I'm done.
-
-### Stay tuned!
+	The 'codewar.bat' file in the root folder of this archive copies these files
+	automatically and adds information based on user input when tackling a new
+	codewars problem. These blank files just make the process a bit easier.

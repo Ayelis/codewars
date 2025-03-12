@@ -1,10 +1,10 @@
-# Problem: _
-	Difficulty: _
-	Date Completed: _
+# Problem: {DESCRIPTION}
+	Difficulty: {KYU}
+	Date Completed: {DATE}
 
 ## 📜Instructions
 	Full problem description:
-	[CodeWars Link](https://www.codewars.com/kata/_)
+	[CodeWars Link](https://www.codewars.com/kata/{KATAID})
 
 ## 🛠Function(s) Usage:
 	Function: _;
