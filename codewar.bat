@@ -41,14 +41,18 @@ copy ".\blank\blank.solution.js" "%folderName%\solution.js"
 REM Replace placeholders in the files
 for %%f in ("%folderName%\README.md", "%folderName%\solution.js") do (
     (
-        REM Read the file line by line, preserving newlines and tabs
-        for /f "delims=" %%l in ('type "%%f"') do (
-            set "line=%%l"
-            set "line=!line:{KYU}=%kyu%!"
-            set "line=!line:{KATAID}=%kataID%!"
-            set "line=!line:{DESCRIPTION}=%description%!"
-            set "line=!line:{DATE}=%formattedDate%!"
-            echo(!line!
+        REM Read the file while preserving blank lines
+        for /f "tokens=1,* delims=:" %%a in ('findstr /n "^" "%%f"') do (
+            set "line=%%b"
+            if defined line (
+                set "line=!line:{KYU}=%kyu%!"
+                set "line=!line:{KATAID}=%kataID%!"
+                set "line=!line:{DESCRIPTION}=%description%!"
+                set "line=!line:{DATE}=%formattedDate%!"
+                echo(!line!
+            ) else (
+                echo.
+            )
         )
     ) > "%%f.tmp"
     move /y "%%f.tmp" "%%f" >nul
