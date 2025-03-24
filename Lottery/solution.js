@@ -7,16 +7,16 @@
   - Space Complexity: O(n) - Two strings. :/
 */
 
-function lottery(str){
-  let result = "";
-
-//loop through the string
-  for (const char of str) {
-    //only include unique digits...
-    if (/\d/.test(char) && !result.includes(char)) {
-      result += char;
+function lottery(str) {
+ //scan through the string
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    //check if the current character is a digit, or if it's already in the string
+    if (!/\d/.test(char) || str.indexOf(char) !== i) {
+      // Remove the interlopers!
+      str = str.slice(0, i) + str.slice(i + 1);
+      i--; //the length has decreased...
     }
   }
-//return the correct response
-  return result || "One more run!";
+  return str || "One more run!";
 }
