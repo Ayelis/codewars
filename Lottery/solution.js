@@ -4,7 +4,7 @@
 
   Complexity Analysis:
   - Time Complexity: O(n) - Scanning through a string...
-  - Space Complexity: O(n) - Two strings. :/
+  - Space Complexity: O(1) - One string!
 */
 
 function lottery(str) {
