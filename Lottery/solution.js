@@ -3,20 +3,21 @@
   CodeWars Link: https://www.codewars.com/kata/5832db03d5bafb7d96000107
 
   Complexity Analysis:
-  - Time Complexity: O(n) - Scanning through a string...
-  - Space Complexity: O(1) - One string!
+  - Time Complexity: O(n) - Scanning through a string with constant time operations...
+  - Space Complexity: O(k) - Just the unique digits
 */
 
 function lottery(str) {
- //scan through the string
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    //check if the current character is a digit, or if it's already in the string
-    if (!/\d/.test(char) || str.indexOf(char) !== i) {
-      // Remove the interlopers!
-      str = str.slice(0, i) + str.slice(i + 1);
-      i--; //the length has decreased...
+  //Let's try this in O(k) time instead of O(n^2)...
+  let result = "";
+  //Scan through the string
+  for (let char of str) {
+    //Is this character a digit we haven't seen yet?
+    if (/\d/.test(char) && !result.includes(char)) {
+      //Append unique digits to the string
+      result += char;
     }
   }
-  return str || "One more run!";
+  //Return the right response...
+  return result || "One more run!";
 }
