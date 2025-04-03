@@ -44,13 +44,3 @@
 	g A "get" call. Pop y and x, then push ASCII value of the character at that position in the program.
 	@ End program.
 	  (i.e. a space) No-op. Does nothing.
-
-/*
-  Solution for "Befunge Interpreter"
-  CodeWars Link: https://www.codewars.com/kata/526c7b931666d07889000a3c
-pursuit software
-  Complexity Analysis:
-  - Time Complexity: O(n) - Linear, all my functions are O(1) and the code is programatic.
-  - Space Complexity: O(n) - Linear: a few operands, couple booleans, a 2d array and an output string
-*/
-
