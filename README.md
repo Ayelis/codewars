@@ -13,9 +13,7 @@ In this challenge I'll be primarily training on kata written in JavaScript.
 This will include algorithms, logic, arrays, data types, and more. Codewars
 is an excellent resource for learning JavaScript as it covers the fundamentals
 as well as highlighting clever solutions to unique problems. No matter your
-experience level, being an engineer means continuously learning. If I can't
-commit code for a project every day, at least I'll commit to completing
-Codewars problems every day and committing those. ✅
+experience level, being an engineer means continuously learning. ✅
 
 Meanwhile, to attempt a new challenge, I've built myself a script which,
 on the windows command line, terminal, or powershell, create a new folder
