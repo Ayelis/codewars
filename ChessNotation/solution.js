@@ -42,6 +42,19 @@ function toWords(move) {
         move = move.split('=')[0];
     }
     
+    // First determine if this is a piece move (starts with K, Q, B, R, N)
+    const pieceLetters = ['K', 'Q', 'B', 'R', 'N'];
+    if (pieceLetters.includes(move[0])) {
+        piece = {
+            'K': 'King',
+            'Q': 'Queen',
+            'B': 'Bishop',
+            'R': 'Rook',
+            'N': 'Knight'
+        }[move[0]];
+        move = move.slice(1);
+    }
+    
     // Check for capture
     if (move.includes('x')) {
         capture = true;
@@ -55,28 +68,17 @@ function toWords(move) {
         }
     }
     
-    // Determine the piece (only if not a pawn)
-    const pieceLetters = ['K', 'Q', 'B', 'R', 'N'];
-    if (pieceLetters.includes(move[0])) {
-        piece = {
-            'K': 'King',
-            'Q': 'Queen',
-            'B': 'Bishop',
-            'R': 'Rook',
-            'N': 'Knight'
-        }[move[0]];
-        move = move.slice(1);
-    }
-    
     // Check for disambiguation (file or rank) - only for non-pawn pieces
+    // This looks for patterns like N7xc3 or Red5
     if (piece !== 'Pawn') {
-        if (/^[a-h].*[a-h]/.test(move)) {
-            // Disambiguation by file (e.g., Red5)
-            fromFile = move[0];
-            move = move.slice(1);
-        } else if (/^[1-8].*[1-8]/.test(move)) {
-            // Disambiguation by rank (e.g., N1f6)
+        // Check for rank disambiguation (e.g., N7f3)
+        if (/^[1-8]/.test(move)) {
             fromRank = move[0];
+            move = move.slice(1);
+        }
+        // Check for file disambiguation (e.g., Rbc1)
+        else if (/^[a-h][a-h]/.test(move)) {
+            fromFile = move[0];
             move = move.slice(1);
         }
     }
