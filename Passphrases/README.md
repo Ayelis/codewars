@@ -10,8 +10,8 @@
 	Function: playPass(s, n);
 
 ### Inputs:
-	s = String
-	n = Shift
+	s = Input passphrase string
+	n = Shift integer for encoding
 
 ### Returns or Examples:
     An encoded passphrase string.

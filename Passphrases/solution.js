@@ -8,32 +8,28 @@
 */
 
 function playPass(s, n) {
-  // Step 1: shift and transform in one loop
+  s = s.toUpperCase(); // Rule: start with uppercase text
+
   let transformed = '';
 
   for (let i = 0; i < s.length; i++) {
-    let ch = s[i];
+    const ch = s[i];
 
     if (/[A-Z]/.test(ch)) {
+      // Shift A-Z letters with wrap-around
       let shifted = String.fromCharCode(((ch.charCodeAt(0) - 65 + n) % 26) + 65);
+      // Apply case based on ORIGINAL index before reversal
+      shifted = i % 2 === 0 ? shifted.toUpperCase() : shifted.toLowerCase();
       transformed += shifted;
     } else if (/[0-9]/.test(ch)) {
-      transformed += (9 - parseInt(ch)).toString();
+      // Complement digit to 9
+      transformed += (9 - Number(ch)).toString();
     } else {
+      // Keep symbols
       transformed += ch;
     }
   }
 
-  // Step 2: reverse and apply case in final string
-  let result = '';
-  for (let i = transformed.length - 1, j = 0; i >= 0; i--, j++) {
-    let ch = transformed[i];
-    if (/[A-Z]/i.test(ch)) {
-      result += j % 2 === 0 ? ch.toLowerCase() : ch.toUpperCase();
-    } else {
-      result += ch;
-    }
-  }
-
-  return result;
+  // Reverse the final string
+  return transformed.split('').reverse().join('');
 }
